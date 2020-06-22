@@ -18,7 +18,17 @@
   </span>
 </div>
 
+<div id="app-3">
+    <span v-if="msg">yes</span>
+    <span v-else>no</span>
+</div>
 
+<div id="app-4">
+    <li v-for="(item, index) in items">
+        {{ index }} - {{ item.message }}
+
+    </li>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
@@ -31,10 +41,30 @@
 
 
 
+
     var app2 = new Vue({
         el: '#app-2',
         data: {
             message: '页面加载于 ' + new Date().toLocaleString()
+        }
+    })
+
+    var app3 = new Vue({
+        el: '#app-3',
+        data: {
+            msg: true
+        }
+    })
+
+    var app3=new Vue({
+        el: '#app-4',
+        data: {
+            items: [
+                {message: 'java入门'},
+                {message: 'mysql入门'},
+                {message: 'html入门'}
+
+            ]
         }
     })
 

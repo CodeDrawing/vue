@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <button v-on:click="sayHi">click me</button>
+</div>
+
+<div id="app1">
+    输入的文本：<input type="text" v-model="message"> {{ message }}
+</div>
+
+<div id="app2">
+    练习的文本 ：<input type="text" v-model="message">{{message}}
+</div>
+<div id="app3">
+    <input type="radio" value="男" v-model="zx" name="sex">男
+    <input type="radio" value="女" v-model="zx" name="sex">女
+
+    <p></p>
+    选中了{{zx}}
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            message: "java入门"
+        },
+        methods: {
+            sayHi: function () {
+                alert(this.message)
+            }
+        }
+    })
+    var app1=new Vue({
+        el: '#app1',
+        data: {
+            message: "123"
+        }
+    })
+    var app2=new Vue({
+        el: '#app2',
+        data: {
+            message: ""
+        }
+    })
+    var app3=new Vue({
+        el: '#app3',
+        data: {
+            zx: ''
+        }
+    })
+
+
+</script>
+</body>
+</html>
